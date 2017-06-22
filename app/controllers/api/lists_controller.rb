@@ -3,7 +3,7 @@ class Api::ListsController < ApplicationController
   before_action :set_list, only: [:show, :update, :destroy]
 
   def index
-    render json: @board.lists.order(:priority)
+    render json: Board.lists_by_priority(@board.id)
   end
   
   def show
